@@ -36,5 +36,12 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
-  }
+  },
+  "keywords": [
+    "slate",
+    "plugin",
+    "list-item",
+    "list",
+    "li"
+  ]
 }
