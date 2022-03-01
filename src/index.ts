@@ -12,6 +12,10 @@ class SitemapCli extends Command {
       char: "l",
       description: "The limit of single file sitemap size.",
     }),
+    domain: flags.string({
+      description: "The domain of the sitemapindex.",
+      required: true,
+    }),
   };
 
   static args = [{ name: "filename" }];
@@ -21,7 +25,7 @@ class SitemapCli extends Command {
     const filename = args.filename || "urls.txt";
     const urls = fs.readFileSync(filename, "utf8").split("\n");
 
-    sitemap(urls, { limit: flags.limit || 45000 });
+    sitemap(urls, { limit: flags.limit || 45000, domain: flags.domain });
     this.log("😎 sitemap generated.");
   }
 }
